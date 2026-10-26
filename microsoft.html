@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microsoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 6%;
+
+    gap: 30px;
+
+    background: white;
+
+    border-bottom: 1px solid #eee;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* MICROSOFT LOGO */
+
+.microsoft-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+}
+
+.microsoft-logo strong {
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+}
+
+.windows-logo {
+    width: 22px;
+
+    height: 22px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 2px;
+}
+
+.windows-logo span:nth-child(1) {
+    background: #f25022;
+}
+
+.windows-logo span:nth-child(2) {
+    background: #7fba00;
+}
+
+.windows-logo span:nth-child(3) {
+    background: #00a4ef;
+}
+
+.windows-logo span:nth-child(4) {
+    background: #ffb900;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex: 1;
+}
+
+.main-nav a {
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.main-nav i,
+.all-microsoft i {
+    font-size: 8px;
+
+    margin-left: 5px;
+}
+
+
+/* RIGHT HEADER */
+
+.header-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    white-space: nowrap;
+}
+
+.header-right > i {
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.all-microsoft {
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 550px;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    background: #f3f3f3;
+}
+
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px 10%;
+}
+
+.hero-label {
+    color: #0067b8;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #444;
+
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+/* BUTTONS */
+
+.primary-btn {
+    background: #0067b8;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #005a9e;
+}
+
+.primary-btn i {
+    margin-left: 10px;
+}
+
+.secondary-btn {
+    background: transparent;
+
+    color: #0067b8;
+
+    border: none;
+
+    padding: 12px 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ================= QUICK LINKS ================= */
+
+.quick-links {
+    min-height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 55px;
+
+    padding: 35px 5%;
+
+    background: white;
+}
+
+.quick-item {
+    width: 150px;
+
+    text-align: center;
+}
+
+.quick-icon {
+    font-size: 30px;
+
+    color: #0067b8;
+
+    margin-bottom: 12px;
+}
+
+.quick-item a {
+    color: #0067b8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.quick-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    background: #fff;
+
+    padding: 70px 6%;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+.section-title a {
+    color: #0067b8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.section-title a i {
+    margin-left: 8px;
+}
+
+.section-title a:hover {
+    text-decoration: underline;
+}
+
+
+/* PRODUCT GRID */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.18);
+}
+
+.product-image {
+    height: 220px;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-content {
+    padding: 25px;
+}
+
+.badge {
+    color: #0067b8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.product-content h3 {
+    font-size: 22px;
+
+    margin: 10px 0;
+}
+
+.product-content p {
+    font-size: 14px;
+
+    color: #555;
+
+    line-height: 1.6;
+
+    min-height: 68px;
+
+    margin-bottom: 20px;
+}
+
+.product-content a {
+    color: #0067b8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.product-content a i {
+    margin-left: 8px;
+}
+
+.product-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= WINDOWS ================= */
+
+.windows-section {
+    margin: 20px 6%;
+
+    min-height: 500px;
+
+    background: #f3f3f3;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+}
+
+.windows-image {
+    height: 100%;
+}
+
+.windows-image img {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 500px;
+
+    object-fit: cover;
+}
+
+.windows-content {
+    padding: 60px;
+}
+
+.windows-content span,
+.surface-content span,
+.xbox-content span,
+.ai-content span {
+    font-size: 11px;
+
+    color: #0067b8;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.windows-content h2 {
+    font-size: 42px;
+
+    font-weight: 600;
+
+    margin: 15px 0;
+}
+
+.windows-content p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= SURFACE ================= */
+
+.surface-section {
+    margin: 80px 6%;
+
+    min-height: 500px;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    background: #f5f5f5;
+}
+
+.surface-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+}
+
+.surface-content h2 {
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.surface-content p {
+    color: #555;
+
+    line-height: 1.7;
+
+    max-width: 450px;
+
+    margin-bottom: 25px;
+}
+
+.surface-image {
+    overflow: hidden;
+}
+
+.surface-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ================= BUSINESS ================= */
+
+.business {
+    background: #f5f5f5;
+
+    padding: 80px 6%;
+}
+
+.business-header {
+    margin-bottom: 40px;
+}
+
+.business-header span {
+    color: #0067b8;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.business-header h2 {
+    font-size: 38px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+}
+
+.business-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.business-grid article {
+    background: white;
+
+    padding: 35px;
+
+    min-height: 270px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+}
+
+.business-grid article > i {
+    color: #0067b8;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.business-grid h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.business-grid p {
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.business-grid a {
+    color: #0067b8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.business-grid a i {
+    margin-left: 8px;
+}
+
+
+/* ================= XBOX ================= */
+
+.xbox {
+    margin: 80px 6%;
+
+    min-height: 550px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.xbox-image {
+    position: absolute;
+
+    inset: 0;
+}
+
+.xbox-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.65;
+}
+
+.xbox-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px;
+
+    color: white;
+
+    max-width: 600px;
+}
+
+.xbox-content span {
+    color: #8bf000;
+}
+
+.xbox-content h2 {
+    font-size: 60px;
+
+    line-height: 1;
+
+    margin: 20px 0;
+}
+
+.xbox-content p {
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    color: #ddd;
+}
+
+.xbox-btn {
+    background: #8bf000;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.xbox-btn i {
+    margin-left: 10px;
+}
+
+
+/* ================= AI ================= */
+
+.ai-section {
+    min-height: 480px;
+
+    margin: 80px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 70px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,70,130,0.95),
+            rgba(0,130,180,0.6)
+        ),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+.ai-content {
+    max-width: 550px;
+}
+
+.ai-content span {
+    color: white;
+}
+
+.ai-content h2 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    margin: 15px 0;
+}
+
+.ai-content p {
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+    color: #e5e5e5;
+}
+
+.ai-content .primary-btn {
+    background: white;
+
+    color: #0067b8;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #f2f2f2;
+
+    padding: 45px 6% 20px;
+
+    color: #616161;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 30px;
+}
+
+.footer-column h3 {
+    font-size: 14px;
+
+    color: #616161;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #616161;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    margin: 12px 0;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 11px;
+}
+
+.language {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.footer-social {
+    display: flex;
+
+    gap: 18px;
+
+    font-size: 17px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav a:nth-child(n+5) {
+        display: none;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 0 20px;
+
+        gap: 15px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .all-microsoft {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        order: 2;
+
+        padding: 50px 30px;
+    }
+
+    .hero-image {
+        order: 1;
+
+        height: 300px;
+    }
+
+    .quick-links {
+        flex-wrap: wrap;
+
+        gap: 25px;
+    }
+
+    .windows-section,
+    .surface-section {
+        grid-template-columns: 1fr;
+
+        margin: 20px;
+    }
+
+    .windows-image {
+        height: 300px;
+    }
+
+    .windows-image img {
+        min-height: 300px;
+    }
+
+    .surface-image {
+        height: 300px;
+
+        order: 1;
+    }
+
+    .surface-content {
+        order: 2;
+    }
+
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .xbox {
+        margin: 50px 20px;
+    }
+
+    .ai-section {
+        margin: 50px 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 60px;
+    }
+
+    .microsoft-logo strong {
+        font-size: 17px;
+    }
+
+    .header-right {
+        margin-left: auto;
+
+        gap: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .products {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .windows-content,
+    .surface-content {
+        padding: 40px 25px;
+    }
+
+    .windows-content h2,
+    .surface-content h2 {
+        font-size: 35px;
+    }
+
+    .business {
+        padding: 60px 20px;
+    }
+
+    .business-header h2 {
+        font-size: 30px;
+    }
+
+    .xbox-content {
+        padding: 40px 25px;
+    }
+
+    .xbox-content h2 {
+        font-size: 42px;
+    }
+
+    .ai-section {
+        padding: 40px 25px;
+    }
+
+    .ai-content h2 {
+        font-size: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="microsoft-logo">
+
+        <div class="windows-logo">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <strong>Microsoft</strong>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="#products">
+            Microsoft 365
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+
+        <a href="#surface">
+            Surface
+        </a>
+
+        <a href="#xbox">
+            Xbox
+        </a>
+
+        <a href="#windows">
+            Windows
+        </a>
+
+        <a href="#business">
+            Business
+        </a>
+
+        <a href="#support">
+            Support
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <span class="all-microsoft">
+            All Microsoft
+            <i class="fa-solid fa-chevron-down"></i>
+        </span>
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <i class="fa-regular fa-user"></i>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            MICROSOFT 365
+        </span>
+
+        <h1>
+            Everything you need<br>
+            to achieve more
+        </h1>
+
+        <p>
+            Microsoft 365 brings together your favorite
+            apps and intelligent tools to help you work,
+            learn and create.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn">
+                Get Microsoft 365
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="secondary-btn">
+                Learn more
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1400&q=85"
+            alt="Laptop">
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK LINKS ================= -->
+
+<section class="quick-links">
+
+    <div class="quick-item">
+
+        <div class="quick-icon">
+            <i class="fa-brands fa-windows"></i>
+        </div>
+
+        <a href="#windows">
+            Choose your Microsoft 365
+        </a>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <div class="quick-icon">
+            <i class="fa-solid fa-laptop"></i>
+        </div>
+
+        <a href="#surface">
+            Explore Surface devices
+        </a>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <div class="quick-icon">
+            <i class="fa-brands fa-xbox"></i>
+        </div>
+
+        <a href="#xbox">
+            Explore Xbox
+        </a>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <div class="quick-icon">
+            <i class="fa-solid fa-briefcase"></i>
+        </div>
+
+        <a href="#business">
+            Find solutions for business
+        </a>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <div class="quick-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+        </div>
+
+        <a href="#">
+            Explore education
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCT CARDS ================= -->
+
+<section class="products" id="products">
+
+    <div class="section-title">
+
+        <h2>
+            Explore Microsoft products
+        </h2>
+
+        <a href="#">
+            View all
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- CARD 1 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=800&q=80"
+                    alt="Microsoft 365">
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="badge">
+                    MICROSOFT 365
+                </span>
+
+                <h3>
+                    Microsoft 365
+                </h3>
+
+                <p>
+                    Premium productivity apps including
+                    Word, Excel, PowerPoint and more.
+                </p>
+
+                <a href="#">
+                    Learn more
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80"
+                    alt="Surface Laptop">
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="badge">
+                    SURFACE
+                </span>
+
+                <h3>
+                    Surface Laptop
+                </h3>
+
+                <p>
+                    Powerful performance and elegant design
+                    for work, study and creativity.
+                </p>
+
+                <a href="#">
+                    Explore Surface
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=800&q=80"
+                    alt="Xbox">
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="badge">
+                    XBOX
+                </span>
+
+                <h3>
+                    Xbox
+                </h3>
+
+                <p>
+                    Discover next-generation gaming,
+                    entertainment and Game Pass.
+                </p>
+
+                <a href="#">
+                    Explore Xbox
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
+                    alt="Microsoft Teams">
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="badge">
+                    BUSINESS
+                </span>
+
+                <h3>
+                    Microsoft Teams
+                </h3>
+
+                <p>
+                    Connect your teams and collaborate
+                    from anywhere.
+                </p>
+
+                <a href="#">
+                    Discover Teams
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WINDOWS ================= -->
+
+<section class="windows-section" id="windows">
+
+    <div class="windows-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1400&q=85"
+            alt="Windows computer">
+
+    </div>
+
+
+    <div class="windows-content">
+
+        <span>
+            WINDOWS
+        </span>
+
+        <h2>
+            Windows 11
+        </h2>
+
+        <p>
+            Designed for a new era of productivity,
+            creativity and connection.
+        </p>
+
+        <button class="primary-btn">
+            Learn more
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SURFACE ================= -->
+
+<section class="surface-section" id="surface">
+
+    <div class="surface-content">
+
+        <span>
+            SURFACE
+        </span>
+
+        <h2>
+            Meet the new<br>
+            Surface family
+        </h2>
+
+        <p>
+            Powerful devices designed to help you
+            get more done wherever you are.
+        </p>
+
+        <button class="primary-btn">
+            Shop Surface
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+
+    <div class="surface-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=1400&q=85"
+            alt="Surface laptop">
+
+    </div>
+
+</section>
+
+
+<!-- ================= BUSINESS ================= -->
+
+<section class="business" id="business">
+
+    <div class="business-header">
+
+        <span>
+            FOR BUSINESS
+        </span>
+
+        <h2>
+            Technology that helps<br>
+            your business grow
+        </h2>
+
+    </div>
+
+
+    <div class="business-grid">
+
+
+        <article>
+
+            <i class="fa-solid fa-cloud"></i>
+
+            <h3>
+                Microsoft Azure
+            </h3>
+
+            <p>
+                Build, deploy and manage applications
+                using Microsoft's cloud platform.
+            </p>
+
+            <a href="#">
+                Explore Azure
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+        <article>
+
+            <i class="fa-solid fa-people-group"></i>
+
+            <h3>
+                Microsoft Teams
+            </h3>
+
+            <p>
+                Bring your people together with
+                collaboration and communication tools.
+            </p>
+
+            <a href="#">
+                Explore Teams
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+        <article>
+
+            <i class="fa-solid fa-robot"></i>
+
+            <h3>
+                AI solutions
+            </h3>
+
+            <p>
+                Transform your organization with
+                intelligent AI-powered solutions.
+            </p>
+
+            <a href="#">
+                Explore AI
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= XBOX ================= -->
+
+<section class="xbox" id="xbox">
+
+    <div class="xbox-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=1600&q=85"
+            alt="Gaming">
+
+    </div>
+
+
+    <div class="xbox-content">
+
+        <span>
+            XBOX
+        </span>
+
+        <h2>
+            POWER YOUR<br>
+            DREAMS
+        </h2>
+
+        <p>
+            Discover amazing games, consoles and
+            entertainment for every kind of gamer.
+        </p>
+
+        <button class="xbox-btn">
+            Explore Xbox
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AI ================= -->
+
+<section class="ai-section">
+
+    <div class="ai-content">
+
+        <span>
+            MICROSOFT AI
+        </span>
+
+        <h2>
+            AI that works<br>
+            with you
+        </h2>
+
+        <p>
+            Discover intelligent experiences that help
+            you create, communicate and accomplish more.
+        </p>
+
+        <button class="primary-btn">
+            Explore AI
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="support">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-column">
+
+            <h3>
+                What's new
+            </h3>
+
+            <a href="#">Surface Pro</a>
+            <a href="#">Microsoft 365</a>
+            <a href="#">Windows 11</a>
+            <a href="#">Microsoft Copilot</a>
+            <a href="#">Xbox</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Microsoft Store
+            </h3>
+
+            <a href="#">Account profile</a>
+            <a href="#">Download Center</a>
+            <a href="#">Returns</a>
+            <a href="#">Order tracking</a>
+            <a href="#">Store locations</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Education
+            </h3>
+
+            <a href="#">Microsoft Education</a>
+            <a href="#">Devices for education</a>
+            <a href="#">Microsoft Teams</a>
+            <a href="#">Office for students</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Business
+            </h3>
+
+            <a href="#">Microsoft Cloud</a>
+            <a href="#">Microsoft Security</a>
+            <a href="#">Azure</a>
+            <a href="#">Microsoft 365 for business</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="#">Careers</a>
+            <a href="#">About Microsoft</a>
+            <a href="#">Company news</a>
+            <a href="#">Investors</a>
+            <a href="#">Sustainability</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">Contact Microsoft</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Security</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="language">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            English (India)
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Microsoft-inspired project
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <i class="fa-brands fa-facebook"></i>
+
+            <i class="fa-brands fa-x-twitter"></i>
+
+            <i class="fa-brands fa-linkedin"></i>
+
+            <i class="fa-brands fa-youtube"></i>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

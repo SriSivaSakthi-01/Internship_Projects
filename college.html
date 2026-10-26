@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage Registration</title>
+    <style>
+        .form{
+            background-color: rgb(0, 234, 251);
+            width: 500px;
+            padding:30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px  rgb(4, 82, 96);
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color:rgb(8, 46, 90);
+        }
+        body{
+            background-color: rgb(64, 226, 237);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        label{
+            display: block;
+            margin-top: 1px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input{
+            width:100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input:focus{
+            border-color: #333;
+            outline: none;
+        }
+        button{
+            background-color: rgb(12, 31, 30);
+            color:aliceblue;
+            padding:10px 25px;
+            margin:10px;
+            border-radius: 6px;
+            border:none;
+            font-size:15px;
+            cursor: pointer;
+        }
+        .button{
+            text-align: center;
+            margin-top: 20px;
+        }
+        button:hover{
+            opacity: 0.8;
+            transform:scale(1.03);
+            background-color: green;
+        }
+
+        .gender, .skills{
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .gender input, .skills input{
+            width:auto;
+            margin-right: 0px;
+        }
+        .gender label, .skills label{
+            display: inline;
+            margin-right: 15px;
+        }
+        label{
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color:rgb(198, 45, 45);
+        }
+        select, input{
+            width:100%;
+            padding:10px;
+            margin-bottom: 15px;
+            border: 1px solid #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>College Student Registration</h1>
+        <form>
+            <label>Name</label><br>
+            <input type = "text" placeholder="enter your name">
+            <br>
+
+            <label>Register Number</label><br>
+            <input type = "text" placeholder="enter your register number">
+            <br>
+            <label>Department</label><br>
+            <select title="Select your department">
+                <option>Select Department</option>
+                <option>CSE</option>
+                <option>IT</option>
+                <option>EEE</option>
+                <option>AI&DS</option>
+                <option>ECE</option>
+            </select>
+            <br>
+
+            <label>Email Id</label><br>
+            <input type = "text" placeholder="enter your mailid"><br>
+
+            <label>Phone Number</label><br>
+            <input type = "text" placeholder="enter your Phonenumber"><br>
+
+            <label>Date Of Birth</label><br>
+            <input type = "date" placeholder="enter your DOB"><br>
+
+            <div class = "gender">
+            <label>Gender</label><br>
+            <input type = "radio" placeholder= "gender" value="Male">Male
+            <input type = "radio" placeholder = "gender" value="Female">Female
+            <br>
+            </div>
+            
+            <label>Place</label><br>
+            <input type = "text" placeholder="enter your place"><br>
+
+            <label>Address</label><br>
+            <input type = "text" placeholder="enter your Address"><br>
+
+            <div class="skills">
+                <label>Skills</label>
+                <br>
+                <input type="checkbox" value="Java" title="Select if you know Java">Java<br>
+                <input type="checkbox" value="Python" title="Select if you know Python">Python<br>
+                <input type="checkbox" value="JavaScript" title="Select if you know JavaScript">JavaScript<br>
+                <input type="checkbox" value="C++" title="Select if you know C++">C++<br>
+            </div>
+
+            <div class="button">
+                <button type="submit">Register</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

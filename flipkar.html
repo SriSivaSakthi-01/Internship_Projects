@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipKart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #f1f3f6;
+        color: #212121;
+    }
+    .header {
+        height: 65px;
+        background: #2874f0;
+        display: flex;
+        align-items: center;
+        padding: 0 7%;
+        gap: 25px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .logo {
+        width: 130px;
+        font-size: 25px;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 20px;
+    }
+    .logo span {
+        color: #ffe500;
+    }
+    .logo small {
+        display: block;
+        font-size: 9px;
+        font-weight: 400;
+        color: white;
+        margin-top: 3px;
+    }
+    .logo small b {
+        color: #ffe500;
+    }
+    .logo small i {
+        color: #ffe500;
+    }
+    .search-box {
+        width: 500px;
+        height: 40px;
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border-radius: 2px;
+        color: #777;
+    }
+    .search-box input {
+        width: 100%;
+        border: none;
+        outline: none;
+        margin-left: 12px;
+        font-size: 14px;
+    }
+    .login-btn {
+        width: 110px;
+        height: 35px;
+        border: none;
+        background: white;
+        color: #2874f0;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .header-link {
+        white-space: nowrap;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .header-link i {
+        margin-left: 5px;
+    }
+    .cart {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .cart i {
+        font-size: 18px;
+    }
+    .category-nav {
+        height: 120px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        overflow-x: auto;
+    }
+    .category-item {
+    min-width: 75px;
+    text-align: center;
+    cursor: pointer;
+}
+.category-item img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.category-item:hover img {
+    transform: scale(1.08);
+}
+.category-item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.hero {
+    width: 100%;
+    height: 380px;
+    margin-top: 10px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+.hero-image {
+    width: 100%;
+    height: 100%;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: white;
+    max-width: 420px;
+}
+.hero-content h1 {
+    font-size: 45px;
+    line-height: 1.15;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.hero-content p {
+    margin: 15px 0 25px;
+    font-size: 17px;
+}
+.shop-btn {
+    background: #ff9f00;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.shop-btn i {
+    margin-left: 8px;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 80px;
+    border: none;
+    background: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+.slider-btn.left {
+    left: 0;
+}
+.slider-btn.right {
+    right: 0;
+}
+.section {
+    width: 94%;
+    max-width: 1400px;
+    margin: 15px auto;
+    background: white;
+    padding: 20px;
+}
+.section-header {
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.section-header h2 {
+    font-size: 22px;
+}
+.section-header button {
+    background: #2874f0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(6, 1fr);
+    gap: 15px;
+}
+.product-card {
+    background: white;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+}
+.product-card:hover {
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+.product-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+.offer-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #388e3c;
+    color: white;
+    padding: 4px 7px;
+    border-radius: 2px;
+    font-size: 10px;
+    z-index: 3;
+}
+.wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 3;
+    color: #777;
+}
+.wishlist:hover {
+    color: #2874f0;
+}
+.product-info {
+    padding: 12px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.price {
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-top: 8px;
+
+    display: inline-block;
+}
+
+.old-price {
+    font-size: 12px;
+
+    color: #878787;
+
+    text-decoration: line-through;
+
+    display: inline-block;
+
+    margin-left: 5px;
+}
+
+.rating {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 8px 0;
+}
+
+.rating span {
+    background: #388e3c;
+
+    color: white;
+
+    padding: 3px 6px;
+
+    border-radius: 3px;
+
+    font-size: 11px;
+}
+
+.rating small {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* CART BUTTON */
+
+.cart-btn {
+    width: 100%;
+
+    border: 1px solid #2874f0;
+
+    background: white;
+
+    color: #2874f0;
+
+    padding: 8px;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.cart-btn:hover {
+    background: #2874f0;
+
+    color: white;
+}
+
+
+/* ================= ELECTRONICS ================= */
+
+.electronics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.electronics-card {
+    text-align: center;
+
+    border: 1px solid #eee;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.electronics-card:hover {
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+}
+
+.electronics-card img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: contain;
+}
+
+.electronics-card h3 {
+    font-size: 15px;
+
+    margin-top: 10px;
+}
+
+.electronics-card p {
+    color: #388e3c;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+
+    font-weight: 600;
+}
+
+
+/* ================= SPECIAL OFFER ================= */
+
+.special-offer {
+    width: 94%;
+
+    max-width: 1400px;
+
+    height: 250px;
+
+    margin: 15px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20,70,160,0.95),
+            rgba(20,70,160,0.3)
+        ),
+        url("https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1400&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 50px;
+
+    color: white;
+}
+
+.offer-content span {
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.offer-content h2 {
+    font-size: 35px;
+
+    margin: 8px 0;
+}
+
+.offer-content p {
+    margin-bottom: 20px;
+}
+
+.offer-content button {
+    padding: 12px 25px;
+
+    border: none;
+
+    background: #ff9f00;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #172337;
+
+    color: white;
+
+    margin-top: 30px;
+}
+
+.footer-container {
+    width: 94%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 45px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 30px;
+}
+
+.footer-column h3 {
+    color: #878787;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    margin: 10px 0;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-column p {
+    color: white;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.social-icons {
+    display: flex;
+
+    gap: 18px;
+}
+
+.social-icons i {
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid #454d5e;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    font-size: 12px;
+}
+
+.footer-bottom i {
+    margin-left: 15px;
+
+    font-size: 18px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+
+    .header {
+        padding: 0 3%;
+
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 350px;
+    }
+
+    .category-nav {
+        gap: 25px;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .header {
+        flex-wrap: wrap;
+
+        height: auto;
+
+        padding: 15px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .search-box {
+        flex: 1;
+
+        width: auto;
+    }
+
+    .header-link {
+        display: none;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .electronics-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .login-btn {
+        width: 80px;
+    }
+
+    .search-box {
+        order: 5;
+
+        flex-basis: 100%;
+
+        width: 100%;
+    }
+
+    .category-nav {
+        justify-content: flex-start;
+
+        padding: 10px 20px;
+
+        gap: 25px;
+    }
+
+    .hero {
+        height: 260px;
+    }
+
+    .hero-content {
+        left: 8%;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .electronics-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .special-offer {
+        height: 220px;
+
+        padding: 25px;
+    }
+
+    .offer-content h2 {
+        font-size: 25px;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .electronics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        Flip<span>kart</span>
+
+        <small>
+            Explore <b>Plus</b>
+            <i class="fa-solid fa-star"></i>
+        </small>
+    </div>
+
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            placeholder="Search for products, brands and more">
+
+    </div>
+
+
+    <button class="login-btn">
+        Login
+    </button>
+
+
+    <div class="header-link">
+        <span>Become a Seller</span>
+    </div>
+
+
+    <div class="header-link">
+        <span>More</span>
+        <i class="fa-solid fa-angle-down"></i>
+    </div>
+
+
+    <div class="cart">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Cart</span>
+
+    </div>
+
+</header>
+
+
+<!-- ================= CATEGORY NAVIGATION ================= -->
+
+<nav class="category-nav">
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=200&q=80" alt="Top Offers">
+
+        <span>Top Offers</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=200&q=80" alt="Fashion">
+
+        <span>Fashion</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=200&q=80" alt="Footwear">
+
+        <span>Footwear</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=200&q=80" alt="Electronics">
+
+        <span>Electronics</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=200&q=80" alt="Beauty">
+
+        <span>Beauty</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=200&q=80" alt="home">
+
+        <span>Home</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Jewellery">
+
+        <span>Jewellery</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=200&q=80" alt="Travel">
+
+        <span>Travel</span>
+
+    </div>
+
+
+    <div class="category-item">
+
+        <img
+            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80" alt="Toys">
+
+        <span>Toys</span>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO BANNER ================= -->
+
+<section class="hero">
+
+    <button class="slider-btn left" title="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+
+    <div class="hero-content">
+
+        <h1>
+            Big Billion<br>
+            Shopping Festival
+        </h1>
+
+        <p>
+            Big discounts on electronics,
+            fashion and more.
+        </p>
+
+        <button class="shop-btn">
+            Shop Now
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1400&q=80" alt="">
+
+    </div>
+
+
+    <button class="slider-btn right" title="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</section>
+
+
+<!-- ================= DEALS ================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <h2>
+            Best Deals
+        </h2>
+
+        <button>
+            VIEW ALL
+        </button>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    30% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Sports Running Shoes
+                </h3>
+
+                <p class="price">
+                    ₹899
+                </p>
+
+                <p class="old-price">
+                    ₹1,299
+                </p>
+
+                <div class="rating">
+
+                    <span>
+                        4.5 ★
+                    </span>
+
+                    <small>
+                        4,321 ratings
+                    </small>
+
+                </div>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    25% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Premium Smart Watch
+                </h3>
+
+                <p class="price">
+                    ₹1,499
+                </p>
+
+                <p class="old-price">
+                    ₹1,999
+                </p>
+
+                <div class="rating">
+
+                    <span>
+                        4.4 ★
+                    </span>
+
+                    <small>
+                        2,840 ratings
+                    </small>
+
+                </div>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    40% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Wireless Headphones
+                </h3>
+
+                <p class="price">
+                    ₹1,199
+                </p>
+
+                <p class="old-price">
+                    ₹1,999
+                </p>
+
+                <div class="rating">
+
+                    <span>
+                        4.3 ★
+                    </span>
+
+                    <small>
+                        6,742 ratings
+                    </small>
+
+                </div>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    20% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Men's Casual T-Shirt
+                </h3>
+
+                <p class="price">
+                    ₹399
+                </p>
+
+                <p class="old-price">
+                    ₹499
+                </p>
+
+                <div class="rating">
+
+                    <span>
+                        4.2 ★
+                    </span>
+
+                    <small>
+                        3,921 ratings
+                    </small>
+
+                </div>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    35% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Women's Fashion Dress
+                </h3>
+
+                <p class="price">
+                    ₹699
+                </p>
+
+                <p class="old-price">
+                    ₹1,099
+                </p>
+
+                <div class="rating">
+
+                    <span>
+                        4.5 ★
+                    </span>
+
+                    <small>
+                        5,120 ratings
+                    </small>
+
+                </div>
+
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="offer-tag">
+                    45% OFF
+                </span>
+
+                <i class="fa-regular fa-heart wishlist"></i>
+
+                <img
+                    src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80" alt="">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Designer Shirt
+                </h3>
+
+                <p class="price">
+                    ₹599
+                </p>
+                <p class="old-price">
+                    ₹1,099
+                </p>
+                <div class="rating">
+                    <span>
+                        4.1 ★
+                    </span>
+                    <small>
+                        1,782 ratings
+                    </small>
+                </div>
+                <button class="cart-btn">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ELECTRONICS ================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <h2>
+            Electronics
+        </h2>
+
+        <button>
+            VIEW ALL
+        </button>
+
+    </div>
+
+
+    <div class="electronics-grid">
+
+        <div class="electronics-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=80" alt="">
+
+            <h3>
+                Smartphones
+            </h3>
+
+            <p>
+                From ₹8,999
+            </p>
+
+        </div>
+
+
+        <div class="electronics-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80" alt="">
+
+            <h3>
+                Laptops
+            </h3>
+
+            <p>
+                From ₹29,999
+            </p>
+
+        </div>
+
+
+        <div class="electronics-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?auto=format&fit=crop&w=600&q=80" alt="">
+
+            <h3>
+                Mobile Accessories
+            </h3>
+
+            <p>
+                From ₹199
+            </p>
+
+        </div>
+
+
+        <div class="electronics-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=600&q=80" alt="">
+
+            <h3>
+                Smart TVs
+            </h3>
+
+            <p>
+                From ₹14,999
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SPECIAL OFFER ================= -->
+
+<section class="special-offer">
+
+    <div class="offer-content">
+
+        <span>
+            LIMITED TIME OFFER
+        </span>
+
+        <h2>
+            Mega Electronics Sale
+        </h2>
+
+        <p>
+            Get up to 70% OFF on selected electronics
+        </p>
+
+        <button>
+            Shop Electronics
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-column">
+
+            <h3>
+                ABOUT
+            </h3>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#">
+                Careers
+            </a>
+
+            <a href="#">
+                FlipShop Stories
+            </a>
+
+            <a href="#">
+                Press
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                HELP
+            </h3>
+
+            <a href="#">
+                Payments
+            </a>
+
+            <a href="#">
+                Shipping
+            </a>
+
+            <a href="#">
+                Cancellation & Returns
+            </a>
+
+            <a href="#">
+                FAQ
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                CONSUMER POLICY
+            </h3>
+
+            <a href="#">
+                Cancellation & Returns
+            </a>
+
+            <a href="#">
+                Terms Of Use
+            </a>
+
+            <a href="#">
+                Security
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                SOCIAL
+            </h3>
+
+            <div class="social-icons">
+
+                <i class="fa-brands fa-facebook"></i>
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+                <i class="fa-brands fa-youtube"></i>
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column address">
+
+            <h3>
+                REGISTERED OFFICE
+            </h3>
+
+            <p>
+                FlipShop Internet Private Limited,
+                Online Shopping Center,
+                Bengaluru, Karnataka, India.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 FlipShop. All Rights Reserved.
+        </p>
+
+        <div>
+
+            <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-building-columns"></i>
+            <i class="fa-solid fa-wallet"></i>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

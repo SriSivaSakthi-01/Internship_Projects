@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: "Inter", sans-serif;
+        background: #000;
+        color: white;
+    }
+    .navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 80px;
+
+    padding: 0 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background: linear-gradient(
+        rgba(0,0,0,0.8),
+        transparent
+    );
+}
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 35px;
+}
+
+.nav-links a,
+.nav-right a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-right a:hover {
+    color: #aaa;
+}
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.menu-icon {
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 100vh;
+
+    min-height: 650px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 8%;
+}
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.2)
+        ),
+        url("https://images.unsplash.com/photo-1446776877081-d282a0f896e2?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 650px;
+
+    z-index: 2;
+}
+
+.small-title {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+}
+
+.hero-text {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color: #ddd;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: white;
+
+    color: black;
+}
+
+.primary:hover {
+    background: #ccc;
+}
+
+.secondary {
+    border: 1px solid white;
+
+    color: white;
+}
+
+.secondary:hover {
+    background: white;
+
+    color: black;
+}
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+}
+
+.scroll-down i {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+    background: #050505;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    padding: 70px 8%;
+
+    border-top: 1px solid #222;
+
+    border-bottom: 1px solid #222;
+}
+
+.stat {
+    text-align: center;
+
+    border-right: 1px solid #333;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat i {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    color: #aaa;
+}
+
+.stat h2 {
+    font-size: 35px;
+
+    margin-bottom: 5px;
+}
+
+.stat p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+
+/* ================= MISSIONS ================= */
+
+.missions {
+    padding: 120px 7%;
+
+    background: #080808;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading p {
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+}
+
+.mission-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.mission-card {
+    background: #111;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+}
+
+.mission-image {
+    height: 350px;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.mission-one {
+    background-image:
+        url("https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=900&q=80");
+}
+
+.mission-two {
+    background-image:
+        url("https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&w=900&q=80");
+}
+
+.mission-three {
+    background-image:
+        url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80");
+}
+
+.mission-content {
+    padding: 30px;
+}
+
+.mission-content span {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.mission-content h3 {
+    font-size: 25px;
+
+    margin: 10px 0;
+}
+
+.mission-content p {
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.mission-content a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.mission-content a i {
+    margin-left: 10px;
+
+    transition: 0.3s;
+}
+
+.mission-content a:hover i {
+    margin-left: 15px;
+}
+
+
+/* ================= ROCKET ================= */
+
+.rocket-section {
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 8%;
+
+    overflow: hidden;
+}
+
+.rocket-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #000 5%,
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.1)
+        ),
+        url("https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -1;
+}
+
+.rocket-content {
+    max-width: 500px;
+}
+
+.rocket-content > p:first-child {
+    font-size: 10px;
+
+    color: #aaa;
+
+    letter-spacing: 4px;
+}
+
+.rocket-content h2 {
+    font-size: 75px;
+
+    letter-spacing: -4px;
+
+    margin: 15px 0;
+}
+
+.description {
+    color: #bbb;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.rocket-specs {
+    display: flex;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+}
+
+.rocket-specs div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.rocket-specs strong {
+    font-size: 18px;
+}
+
+.rocket-specs span {
+    font-size: 8px;
+
+    color: #777;
+
+    letter-spacing: 2px;
+
+    margin-top: 5px;
+}
+
+.outline-btn {
+    background: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+
+    padding: 13px 22px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    background: white;
+
+    color: black;
+}
+
+.outline-btn i {
+    margin-left: 10px;
+}
+
+
+/* ================= STARLINK ================= */
+
+.starlink {
+    min-height: 600px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #f5f5f5;
+
+    color: #111;
+}
+
+.starlink-image {
+    background:
+        url("https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&w=1200&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.starlink-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px;
+}
+
+.starlink-content > p:first-child {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+}
+
+.starlink-content h2 {
+    font-size: 65px;
+
+    margin: 15px 0;
+}
+
+.starlink-content p {
+    max-width: 450px;
+
+    line-height: 1.8;
+
+    color: #555;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+.white-btn {
+    width: fit-content;
+
+    background: #111;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+}
+
+.white-btn:hover {
+    background: #333;
+}
+
+
+/* ================= FUTURE ================= */
+
+.future {
+    min-height: 700px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 8%;
+}
+
+.future-content {
+    max-width: 550px;
+}
+
+.future-content > p:first-child {
+    color: #bbb;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.future-content h2 {
+    font-size: 85px;
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+}
+
+.future-description {
+    color: #ccc;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 450px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 120px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    background: #080808;
+}
+
+.about-heading p {
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: 4px;
+}
+
+.about-heading h2 {
+    font-size: 55px;
+
+    line-height: 1;
+
+    margin-top: 20px;
+}
+
+.about-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.about-text p {
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+    min-height: 450px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.8)
+        ),
+        url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.cta p {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #aaa;
+}
+
+.cta h2 {
+    font-size: 50px;
+
+    margin: 15px 0 30px;
+}
+
+.cta .white-btn {
+    background: white;
+
+    color: black;
+}
+
+.cta .white-btn:hover {
+    background: #ccc;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #050505;
+
+    padding: 50px 7% 25px;
+}
+
+.footer-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid #222;
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social {
+    display: flex;
+
+    gap: 18px;
+}
+
+.social i {
+    color: #777;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.social i:hover {
+    color: white;
+}
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 40px;
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mission-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .rocket-section {
+        padding: 80px 8%;
+    }
+
+    .starlink-content {
+        padding: 50px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+    .nav-right a {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 25px;
+
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 200px;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 50px 20px;
+    }
+
+    .stat {
+        border-right: none;
+
+        border-bottom: 1px solid #333;
+
+        padding-bottom: 30px;
+    }
+
+    .missions {
+        padding: 80px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card:last-child {
+        grid-column: auto;
+    }
+
+    .mission-image {
+        height: 280px;
+    }
+
+    .rocket-section {
+        min-height: 650px;
+
+        padding: 60px 25px;
+    }
+
+    .rocket-content h2 {
+        font-size: 55px;
+    }
+
+    .rocket-specs {
+        gap: 20px;
+    }
+
+    .starlink {
+        grid-template-columns: 1fr;
+    }
+
+    .starlink-image {
+        min-height: 350px;
+    }
+
+    .starlink-content {
+        padding: 60px 25px;
+    }
+
+    .starlink-content h2 {
+        font-size: 50px;
+    }
+
+    .future {
+        min-height: 600px;
+
+        padding: 60px 25px;
+    }
+
+    .future-content h2 {
+        font-size: 60px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 80px 25px;
+    }
+
+    .about-heading h2 {
+        font-size: 42px;
+    }
+
+    .cta {
+        min-height: 400px;
+
+        padding: 30px;
+    }
+
+    .cta h2 {
+        font-size: 35px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        SPACEX
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="#missions">MISSIONS</a>
+        <a href="#rockets">ROCKETS</a>
+        <a href="#vehicles">VEHICLES</a>
+        <a href="#starlink">STARLINK</a>
+        <a href="#about">ABOUT</a>
+
+    </nav>
+
+    <div class="nav-right">
+
+        <a href="#shop">SHOP</a>
+
+        <i class="fa-solid fa-bars menu-icon"></i>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            NEXT GENERATION SPACE EXPLORATION
+        </p>
+
+        <h1>
+            MAKING LIFE<br>
+            MULTIPLANETARY
+        </h1>
+
+        <p class="hero-text">
+            Space technology designed to make humanity
+            a multiplanetary civilization.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#missions" class="btn primary">
+                EXPLORE MISSIONS
+            </a>
+
+            <a href="#rockets" class="btn secondary">
+                OUR ROCKETS
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-down">
+
+        <span>SCROLL TO EXPLORE</span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <i class="fa-solid fa-rocket"></i>
+
+        <h2>300+</h2>
+
+        <p>MISSIONS</p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <i class="fa-solid fa-satellite"></i>
+
+        <h2>7,000+</h2>
+
+        <p>SATELLITES</p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+        <h2>100+</h2>
+
+        <p>LAUNCHES</p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <i class="fa-solid fa-user-astronaut"></i>
+
+        <h2>50+</h2>
+
+        <p>CREW MEMBERS</p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MISSIONS ================= -->
+
+<section class="missions" id="missions">
+
+    <div class="section-heading">
+
+        <p>
+            EXPLORE
+        </p>
+
+        <h2>
+            OUR MISSIONS
+        </h2>
+
+    </div>
+
+
+    <div class="mission-grid">
+
+
+        <article class="mission-card">
+
+            <div class="mission-image mission-one"></div>
+
+            <div class="mission-content">
+
+                <span>
+                    HUMAN SPACEFLIGHT
+                </span>
+
+                <h3>
+                    CREW DRAGON
+                </h3>
+
+                <p>
+                    A next-generation spacecraft designed
+                    to transport astronauts into orbit.
+                </p>
+
+                <a href="#">
+                    LEARN MORE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="mission-card">
+
+            <div class="mission-image mission-two"></div>
+
+            <div class="mission-content">
+
+                <span>
+                    HEAVY-LIFT LAUNCH
+                </span>
+
+                <h3>
+                    FALCON HEAVY
+                </h3>
+
+                <p>
+                    A powerful launch vehicle capable of
+                    carrying large payloads into space.
+                </p>
+
+                <a href="#">
+                    LEARN MORE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="mission-card">
+
+            <div class="mission-image mission-three"></div>
+
+            <div class="mission-content">
+
+                <span>
+                    FUTURE EXPLORATION
+                </span>
+
+                <h3>
+                    STARSHIP
+                </h3>
+
+                <p>
+                    A fully reusable transportation system
+                    designed for deep-space missions.
+                </p>
+
+                <a href="#">
+                    LEARN MORE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ROCKET ================= -->
+
+<section class="rocket-section" id="rockets">
+
+    <div class="rocket-background"></div>
+
+    <div class="rocket-content">
+
+        <p>
+            REUSABLE ROCKET TECHNOLOGY
+        </p>
+
+        <h2>
+            FALCON 9
+        </h2>
+
+        <p class="description">
+            Falcon 9 is a reusable, two-stage rocket
+            designed and manufactured for the reliable
+            transport of people and payloads into orbit.
+        </p>
+
+        <div class="rocket-specs">
+
+            <div>
+                <strong>70 m</strong>
+                <span>HEIGHT</span>
+            </div>
+
+            <div>
+                <strong>549,054 kg</strong>
+                <span>MASS</span>
+            </div>
+
+            <div>
+                <strong>22,800 kg</strong>
+                <span>PAYLOAD</span>
+            </div>
+
+        </div>
+
+        <button class="outline-btn">
+            VIEW ROCKET
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STARLINK ================= -->
+
+<section class="starlink" id="starlink">
+
+    <div class="starlink-image"></div>
+
+    <div class="starlink-content">
+
+        <p>
+            CONNECTIVITY FROM SPACE
+        </p>
+
+        <h2>
+            STARLINK
+        </h2>
+
+        <p>
+            High-speed internet connectivity designed
+            to reach communities around the world,
+            including remote locations.
+        </p>
+
+        <button class="white-btn">
+            DISCOVER STARLINK
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FUTURE ================= -->
+
+<section class="future" id="vehicles">
+
+    <div class="future-content">
+
+        <p>
+            THE FUTURE OF EXPLORATION
+        </p>
+
+        <h2>
+            BEYOND<br>
+            EARTH
+        </h2>
+
+        <p class="future-description">
+            From reusable launch vehicles to missions
+            beyond Earth, new technologies are opening
+            the next chapter of space exploration.
+        </p>
+
+        <button class="outline-btn">
+            DISCOVER MORE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-heading">
+
+        <p>
+            ABOUT US
+        </p>
+
+        <h2>
+            BUILDING THE<br>
+            FUTURE OF SPACE
+        </h2>
+
+    </div>
+
+
+    <div class="about-text">
+
+        <p>
+            Our mission is to develop technologies that
+            make space more accessible and enable humanity
+            to explore beyond Earth.
+        </p>
+
+        <p>
+            Through reusable spacecraft, advanced launch
+            systems, and satellite technology, we are
+            working toward a future where space exploration
+            becomes increasingly accessible.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="shop">
+
+    <div>
+
+        <p>
+            READY FOR THE NEXT MISSION?
+        </p>
+
+        <h2>
+            EXPLORE THE UNIVERSE
+        </h2>
+
+        <button class="white-btn">
+            EXPLORE NOW
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-logo">
+            SPACEX
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">TERMS</a>
+            <a href="#">CAREERS</a>
+            <a href="#">CONTACT</a>
+
+        </div>
+
+        <div class="social">
+
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>
+            © 2026 Space Exploration.
+            All rights reserved.
+        </p>
+        <p>
+            Designed for educational purposes.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+create database student_database;
+use student_database;
+create table students(
+id int primary key,
+name varchar(50),
+age int,
+dpt varchar(50),
+marks int);
+insert into students(id,name,age,dpt,marks) values
+(1,'Arun',20,'CSE',85),
+(2,'Bala',21,'ECE',72),
+(3,'Charan',20,'MECH',68),
+(4,'Dhivya',22,'CSE',91),
+(5,'Gokul',21,'IT',78);
+
+select*from students;
+select name, dpt from students;
+select * from students
+where id = 3;
+select * from students
+where dpt = 'CSE';
+select * from students
+where marks>75;
+
+insert into students(id,name,age,dpt,marks) value
+(6,'Hari',20,'IT',88),
+(7,'Kavin',22,'ECE',64);
+
+update students
+set marks=92
+where name ='Hari';
+update students
+set dpt = 'CSE'
+where name = 'Bala';
+update students
+set dpt ='CSE'
+where name ='Bala';
+update students
+set mark = 
+where name ='Charan';
+
